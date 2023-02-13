@@ -28,7 +28,9 @@ app.get("/get-token", (req, res) => {
 
   const payload = {
     apikey: API_KEY,
-    permissions: ["allow_join", "allow_mod"], // also accepts "ask_join"
+    permissions: ["allow_join", "allow_mod"], 
+    version: 2,
+    roles: ['CRAWLER'],
   };
 
   const token = jwt.sign(payload, SECRET_KEY, options);
