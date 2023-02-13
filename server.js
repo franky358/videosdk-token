@@ -74,9 +74,9 @@ app.post("/validate-meeting/:meetingId", (req, res) => {
 });
 
 //
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(process.env.VIDEOSDK_API_KEY);
   console.log(process.env.VIDEOSDK_SECRET_KEY)
-  console.log(port);
+  console.log(PORT);
   //console.log(`API server listening at https://videsdk-token.herokuapp.com/:${PORT}`);
  });
