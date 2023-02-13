@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const { default: fetch } = require("node-fetch");
 const jwt = require("jsonwebtoken");
 
-const PORT = 9000;
+const PORT = process.env.port || 9000;
 const app = express();
 
 app.use(cors());
@@ -74,8 +74,9 @@ app.post("/validate-meeting/:meetingId", (req, res) => {
 });
 
 //
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log(process.env.VIDEOSDK_API_KEY);
   console.log(process.env.VIDEOSDK_SECRET_KEY)
+  console.log(port);
   //console.log(`API server listening at https://videsdk-token.herokuapp.com/:${PORT}`);
  });
