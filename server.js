@@ -72,6 +72,6 @@ app.post("/validate-meeting/:meetingId", (req, res) => {
 });
 
 //
-app.listen(PORT, () => {
-  //console.log(`API server listening at http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//   //console.log(`API server listening at http://localhost:${PORT}`);
+// });
