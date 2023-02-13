@@ -23,6 +23,8 @@ app.get("/", (req, res) => {
 app.get("/get-token", (req, res) => {
   const API_KEY = process.env.VIDEOSDK_API_KEY;
   const SECRET_KEY = process.env.VIDEOSDK_SECRET_KEY;
+  console.log(API_KEY)
+  console.log(SECRET_KEY)
 
   const options = { expiresIn: "10m", algorithm: "HS256" };
 
@@ -72,6 +74,6 @@ app.post("/validate-meeting/:meetingId", (req, res) => {
 });
 
 //
-// app.listen(PORT, () => {
-//   //console.log(`API server listening at http://localhost:${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`API server listening at https://videsdk-token.herokuapp.com/:${PORT}`);
+ });
