@@ -74,7 +74,7 @@ app.post("/validate-meeting/:meetingId", (req, res) => {
 });
 
 //
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 9000, () => {
   console.log(process.env.VIDEOSDK_API_KEY);
   console.log(process.env.VIDEOSDK_SECRET_KEY)
   console.log(PORT);
