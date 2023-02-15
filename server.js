@@ -23,13 +23,13 @@ app.get("/", (req, res) => {
 app.get("/get-token", (req, res) => {
   const API_KEY = process.env.VIDEOSDK_API_KEY;
   const SECRET_KEY = process.env.VIDEOSDK_SECRET_KEY;
-  console.log(req)
+  console.log(req.query.role)
 
   const options = { expiresIn: "10m", algorithm: "HS256" };
 
   const payload = {
     apikey: API_KEY,
-    permissions: ["allow_join", "allow_mod"], 
+    permissions: req.query.role === 'professor' ? ["allow_join", "allow_mod"] : ["allow_join"], 
     version: 2,
     roles: ['CRAWLER'],
   };
