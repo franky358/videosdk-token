@@ -23,8 +23,7 @@ app.get("/", (req, res) => {
 app.get("/get-token", (req, res) => {
   const API_KEY = process.env.VIDEOSDK_API_KEY;
   const SECRET_KEY = process.env.VIDEOSDK_SECRET_KEY;
-  console.log(API_KEY)
-  console.log(SECRET_KEY)
+  console.log(req)
 
   const options = { expiresIn: "10m", algorithm: "HS256" };
 
